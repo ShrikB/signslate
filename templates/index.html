@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="gradient">
+
+    <div class="title">
+        <div class="pictures">
+            <canvas id="image" class="canvas" width="300" height="300"></canvas>
+            <canvas id="sadge" class="sadge" width="64" height="64" style="display: none;"></canvas>
+            <video id="videoElement" autoplay="true" width="300" height="300"></video>
+        </div>
+
+        <h1>SIGN<br/>SLATE</h1>
+        <h3 id = "borderR">Taken Picture</h3>
+        <h4 id = "borderR">Live cam</h4>
+
+        <p id="timer"><strong>0.600</strong></p>
+    </div>
+
+    <div class="output">
+        <p id="outBox"></p>
+
+        <div class="loli">
+        <p class="selection">Dominant Hand</p>
+        <form>
+            <select name="selectionh" id="selectionh">
+                <option value="rh" selected>Right</option>
+                <option value="lh">Left</option>
+            </select>
+        </form>
+        </div>
+
+        <div class="btnSpace">
+        <button id="capture" class="btn" onclick="oink();">Capture Image</button>
+        </div>
+    </div>
+
+
+    <!--canvas to display the captured picture-->
+
+
+    {% load static %}
+    <script src="{% static "script.js" %}"></script>
+</div>
+</body>
+
+</html>
